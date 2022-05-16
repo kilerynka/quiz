@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import WelcomePage from './components/WelcomePage';
+import Quiz from './components/Quiz'
 
-function App() {
+export default function App() {
+  const [frontPage, setFrontPage] = React.useState(true)
+  const [questionsApi, setQuestionsApi] = React.useState()
+   
+
+  React.useEffect(() => {
+
+      fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+      .then(response => response.json())
+      .then(data => setQuestionsApi(data.results))
+  }, [])
+
+  function startQuiz() {
+    setFrontPage(false)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    { frontPage ? <WelcomePage onClick={startQuiz}/> : <Quiz data={questionsApi}/>}
+    </>
   );
 }
 
-export default App;
+

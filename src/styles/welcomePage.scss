@@ -1,0 +1,62 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C1C1C;
+}
+
+.welcome {
+    height: 550px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/intro-page.svg);
+    font-family: 'Karla';
+    &-title {
+        font-size: 40px;
+    }
+    &-text {
+        margin: 30px 0;
+        font-family: inter, sans-serif;
+    }
+    &-button {
+        background-color: #4D5B9E;
+        border: 0;
+        padding: 10px 50px;
+        box-shadow: 0px 5px 10px;
+        transition: all .3s;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: inter, sans-serif;
+        font-size: 14px;
+        color: white;
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:active {
+            box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+        }
+    }
+}
+
+
+
+
+    // padding: 15px 50px;
+    // background-color: #4D5B9E;
+    // border-radius: 10px;
+    // color: white;
+    // border: none;
+    // font-family: inter, sans-serif;
+    // font-size: 14px;

@@ -1,0 +1,16 @@
+
+main {
+ height: 550px;
+ width: 550px;
+ padding: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ background-image: url(../assets/intro-page.svg);
+ font-family: 'Karla';
+}
+
+.wrap {
+    margin: 20px;
+}
