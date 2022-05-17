@@ -1,16 +1,18 @@
 
 main {
- height: 550px;
- width: 550px;
- padding: 10px;
+ height: 100vh;
+ min-width: 100vw;
  display: flex;
  flex-direction: column;
- justify-content: space-between;
+ justify-content: center;
  align-items: center;
  background-image: url(../assets/intro-page.svg);
+ background-repeat: no-repeat;
+ background-size: cover;
  font-family: 'Karla';
 }
 
-.wrap {
-    margin: 20px;
+
+.checkAnswers {
+    align-self: center;
 }

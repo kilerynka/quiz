@@ -3,6 +3,8 @@ import '../styles/question.scss'
 
 export default function Question(props) {
     const arrayOfAnswers = [...props.falseAnswer, props.correctAnswer]
+    const correctAnswer = props.correctAnswer
+
 
     const [answers] = React.useState(shuffle(arrayOfAnswers))
 
@@ -23,19 +25,19 @@ export default function Question(props) {
     
     const question = props.question.replace(/&quot;/g, `"`)
   
- const [check, setCheck] = React.useState({
+ const [check, setCheck] = React.useState()
 
- })
+console.log(check)
 
-
-   
 function onChangeValue(event) {
-    console.log(event.target.value)
+    if(event.target.value === correctAnswer) {
+
+        setCheck(true)
+    } else {
+        setCheck(false)
+    }
 }
     
-function test(event) {
-console.log(event.target.checked)
-}
 
     
 
@@ -45,44 +47,47 @@ console.log(event.target.checked)
     return (
         <article className='questionContainer'>
             <h1 className='questionContainer-question'>{question.replace(/&#039;/g, " '")}</h1>
-            <div
-             className='answersForm'
-             onChange={onChangeValue}>
+            <div onChange={onChangeValue}
+             className='answersForm'>
             <label className='answersForm_label'>
                 <input
                     className='answersForm_label-radio'
                     type="radio"
                     value={answers[0]}
-                    name="answer"
+                    name={question}
+                    onChange={(event) => props.handleChange(event, check)}
                 />
-                {answers[0]}
+                <span>{answers[0]}</span>
                 </label>
             <label className='answersForm_label'>
                 <input
                     className='answersForm_label-radio'
                     type="radio"
                     value={answers[1]}
-                    name="answer"
+                    name={question}
+                    onChange={(event) => props.handleChange(event,check)}
                 />
-                {answers[1]}
+                <span>{answers[1]}</span>
                 </label>
             <label className='answersForm_label'>
                 <input
                     className='answersForm_label-radio'
                     type="radio"
                     value={answers[2]}
-                    name="answer"
+                    name={question}
+                    onChange={(event) => props.handleChange(event,check)}
                 />
-                {answers[2]}
+                <span>{answers[2]}</span>
                 </label>
             <label className='answersForm_label'>
                 <input
                     className='answersForm_label-radio'
                     type="radio"
                     value={answers[3]}
-                    name="answer"
+                    name={question}
+                    onChange={(event) => props.handleChange(event,check)}
                 />
-                {answers[3]}
+                <span>{answers[3]}</span>
                 </label>
             </div>
         </article>

@@ -11,17 +11,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1C1C1C;
 }
 
 .welcome {
-    height: 550px;
-    width: 550px;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(../assets/intro-page.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Karla';
     &-title {
         font-size: 40px;
